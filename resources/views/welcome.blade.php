@@ -17,7 +17,7 @@
         </ul>
       </div>
     @endif
-      <form method="post" action="{{ route('formationtype.store') }}">
+      <form method="post" action="{{ route('employees.store') }}">
           <div class="form-group">
               @csrf
               <label for="name">Name</label>
@@ -27,7 +27,10 @@
               <label for="email">Email</label>
               <input type="email" class="form-control" name="email"/>
           </div>
-          
+          <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" class="form-control" name="phone"/>
+          </div>
           <button type="submit" class="btn btn-block btn-primary">Add</button>
       </form>
   </div>

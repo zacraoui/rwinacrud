@@ -1,5 +1,3 @@
-
-
 @extends('layout')
 
 @section('content')
@@ -14,19 +12,22 @@
     <thead>
         <tr class="table-primary">
           <td># ID</td>
-          <td>title</td>
-          
+          <td>Name</td>
+          <td>Email</td>
+          <td>Phone</td>
+          <td>Action</td>
         </tr>
     </thead>
     <tbody>
-        @foreach($formationtype as $formationtype)
+        @foreach($employee as $employee)
         <tr>
-            <td>{{$formationtype->id}}</td>
-            <td>{{$formationtype->title}}</td>
-            
+            <td>{{$employee->id}}</td>
+            <td>{{$employee->name}}</td>
+            <td>{{$employee->email}}</td>
+            <td>{{$employee->phone}}</td>
             <td class="text-center">
-                <a href="{{ route('formationtype.edit', $formationtype->id)}}" class="btn btn-success btn-sm">Edit</a>
-                <form action="{{ route('formationtype.destroy', $formationtype->id)}}" method="post" style="display: inline-block">
+                <a href="{{ route('employees.edit', $employee->id)}}" class="btn btn-success btn-sm">Edit</a>
+                <form action="{{ route('employees.destroy', $employee->id)}}" method="post" style="display: inline-block">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger btn-sm" type="submit">Delete</button>
